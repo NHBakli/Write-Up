@@ -1,9 +1,9 @@
-![image.png](attachment:e39efc95-1fee-4f41-b4bd-1d6d768b47b4:image.png)
+<img width="1278" height="1338" alt="image" src="https://github.com/user-attachments/assets/c0eace50-75bb-4641-b7b8-884dcbd63f89" />
 
 > On trouve un port 80 ouvert et on check le site
 > 
 
-![image.png](attachment:86e8ad64-c2d0-46a5-ab14-c531776b137b:image.png)
+<img width="1400" height="764" alt="image" src="https://github.com/user-attachments/assets/87014f8a-d4cb-49f0-98d5-600f1cbccfbf" />
 
 <aside>
 ⛔
@@ -54,9 +54,9 @@ Mais lors de la création d’un cookie on voit bien qu’il y a de la sérialis
 
 On remarque que c’est ce qu’on tape sur le site qui est sérialiser, donc on va voir s’il y a une rce  
 
-![image.png](attachment:ae632c74-f6b2-4af1-89ef-9b29d78198a8:image.png)
+<img width="1850" height="1017" alt="image" src="https://github.com/user-attachments/assets/271cfcf6-888a-4f7c-b1dc-d1a40110494b" />
 
-![image.png](attachment:002dd9ee-f85e-42c9-a489-976b7be9a803:image.png)
+<img width="1400" height="262" alt="image" src="https://github.com/user-attachments/assets/e80462ec-068e-461a-b67e-2c1726aceb66" />
 
 On utilise alors un payload qui justement utilise des commandes system pour voir si le code est vulnérable :
 
@@ -66,11 +66,11 @@ On utilise alors un payload qui justement utilise des commandes system pour voir
 
 on se met en écoute 
 
-![image.png](attachment:5899a6e7-7bd6-4fec-8e64-7f9b58b95ed8:image.png)
+<img width="1400" height="544" alt="image" src="https://github.com/user-attachments/assets/090a1801-03ff-44ac-b705-65ad8804734b" />
 
 et on met le payload en base 64 dans les cookies
 
-![image.png](attachment:e6d2e3a4-261b-4f2d-b6d4-3dfa4a0332b3:image.png)
+<img width="1400" height="770" alt="image" src="https://github.com/user-attachments/assets/c50ebf4b-cef4-48be-8040-acdc079afced" />
 
 ```jsx
 Donc la logique réelle est :
@@ -82,7 +82,7 @@ Je teste un payload connu (_$$ND_FUNC$$_)
 
 et ça fonctionne 
 
-![image.png](attachment:2586c279-01d9-400f-a0ad-96aa5231d020:image.png)
+<img width="1852" height="481" alt="image" src="https://github.com/user-attachments/assets/167125ba-281f-4d54-b5ee-a3d0cf412277" />
 
 Donc on crée un revshell
 
@@ -92,7 +92,7 @@ Donc on crée un revshell
 
 et donc avant de le mettre dans les cookies, on ouvre un serveur web dans notre machine d’attaque et on met un revshell 
 
-![image.png](attachment:513a184c-aafc-4440-a964-5dd2383ddb99:image.png)
+<img width="1400" height="767" alt="image" src="https://github.com/user-attachments/assets/0d82b619-bde8-4d2b-acdb-fac7d4276dd0" />
 
 <aside>
 💡
