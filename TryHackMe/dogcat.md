@@ -51,7 +51,7 @@ It take this:
 </html>
 ```
 
-So we can see, the logic of code. If we put ext=, we can get the passwd file, like this: 
+So we can see, the logic of code. If we put `ext=`, we can get the passwd file, like this: 
 ```
 ?view=cat/../../../../etc/passwd&ext=
 ```
