@@ -15,7 +15,7 @@ echo "Base64 Here" | base64 -d
 ```
 
 It gives us : 
-```
+```html
 <!DOCTYPE HTML>
 <html>
 
