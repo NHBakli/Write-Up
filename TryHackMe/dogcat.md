@@ -4,7 +4,7 @@ First, we analysis the home page
 We have see when we click on A dog or A cat button, this appers on this URL 
 <img width="271" height="45" alt="image" src="https://github.com/user-attachments/assets/1bced629-33f3-4a5c-9435-dd7fa4382a36" />
 
-So, We you made this in the URL : 
+So, We can put this in the URL : 
 ```
 ?view=php://filter/convert.base64-encode/resource=cat../../index
 ```
