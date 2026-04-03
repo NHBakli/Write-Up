@@ -41,3 +41,11 @@ In the other side we try to connect with ftp :
 lftp ftp:/10.10.10.10
 ```
 <img width="705" height="224" alt="image" src="https://github.com/user-attachments/assets/b21b8a66-1900-4250-b068-0eebd0fdd240" />
+---
+Bingo, we have holt's password :
+```
+ssh holt@10.130.157.106   
+```
+<img width="705" height="298" alt="image" src="https://github.com/user-attachments/assets/94f5e7b3-9925-4967-b792-301a3ba9a4cb" />
+
+
