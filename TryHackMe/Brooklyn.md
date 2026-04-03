@@ -13,3 +13,23 @@ There is steganography !
 
 anonymous login in ftp is allowed
 
+---
+
+Analyzing the image with the commandlien: 
+```
+stegcracker image.png
+```
+
+the result :
+---
+<img width="705" height="299" alt="image" src="https://github.com/user-attachments/assets/3c42bed6-4da6-4e10-92b8-91613043e7e4" />
+
+so -> admin is the password used to lock data in the image 
+
+and then we have a another file created 
+---
+<img width="705" height="127" alt="image" src="https://github.com/user-attachments/assets/cd208776-139a-4a85-a079-d1f651a2e4cf" />
+
+and when we cat it 
+---
+<img width="705" height="127" alt="image" src="https://github.com/user-attachments/assets/8e6724b6-0c87-4744-a1b4-d032fa5f7ff0" />
