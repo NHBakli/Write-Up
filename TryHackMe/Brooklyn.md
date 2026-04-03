@@ -11,4 +11,5 @@ There is steganography !
 ---
 <img width="698" height="783" alt="image" src="https://github.com/user-attachments/assets/32fdab7f-35ef-4c4d-ad89-27129892b1bc" />
 
-On peut se connecter en anonyme sur ftp !
+anonymous login in ftp is allowed
+
