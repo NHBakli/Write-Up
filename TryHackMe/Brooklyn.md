@@ -50,4 +50,19 @@ ssh holt@10.130.157.106
 ```
 <img width="705" height="298" alt="image" src="https://github.com/user-attachments/assets/94f5e7b3-9925-4967-b792-301a3ba9a4cb" />
 
+---
+to get the root flag 
 
+```
+sudo -l
+```
+
+then notice that we have root permission on nano 
+
+```
+sudo nano /root/root.txt
+```
+
+<img width="716" height="195" alt="image" src="https://github.com/user-attachments/assets/7b4f8dcf-1484-44a6-a6aa-223de05adec0" />
+
+Congraaaat 🎉🎉🎉🎉🎉
