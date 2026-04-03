@@ -33,3 +33,10 @@ and then we have a another file created
 and when we cat it 
 ---
 <img width="705" height="127" alt="image" src="https://github.com/user-attachments/assets/8e6724b6-0c87-4744-a1b4-d032fa5f7ff0" />
+
+In the other side we try to connect with ftp :
+```
+lftp ftp:/10.10.10.10
+```
+---
+<img width="705" height="224" alt="image" src="https://github.com/user-attachments/assets/b21b8a66-1900-4250-b068-0eebd0fdd240" />
