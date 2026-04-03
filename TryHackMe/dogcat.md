@@ -107,3 +107,8 @@ sudo env /bin/sh
 ```
 GOOD GAME THIRD FLAG !
 ---
+
+Link to read about pivoting
+```
+https://d00mfist.gitbooks.io/ctf/content/port_forwarding_and_tunneling.html
+```
