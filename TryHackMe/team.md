@@ -10,7 +10,7 @@ in the same time a gobuster :
 
 
 ---
-in the robots.txt we have a messaged 
+in the robots.txt we have a message
 
 ```
 dale
