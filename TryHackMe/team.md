@@ -5,6 +5,7 @@ First lets start with a nmap scan
 
 ---
 in the same time a gobuster :
+---
 <img width="694" height="423" alt="image" src="https://github.com/user-attachments/assets/bfc7f2f7-157a-460c-82ba-9c8570e5aa9c" />
 
 
