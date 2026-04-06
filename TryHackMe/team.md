@@ -1,4 +1,5 @@
 First lets start with a nmap scan
+---
 <img width="713" height="581" alt="image" src="https://github.com/user-attachments/assets/8f45b099-bf3d-4787-bfd3-6c5d1cb791af" />
 
 
@@ -92,6 +93,7 @@ so apparently main_backup.sh is executed every minute, and we also know that it 
 <img width="713" height="49" alt="image" src="https://github.com/user-attachments/assets/b56e7781-346c-4479-a37c-7865cd21e180" />
 
 wait a minute ! and then great we have the root flag 
+---
 <img width="713" height="273" alt="image" src="https://github.com/user-attachments/assets/c05ffd58-198b-450d-9cba-1d1dae8fdf24" />
 
 
