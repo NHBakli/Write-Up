@@ -56,7 +56,7 @@ BINGO !!!! we are connected as james and we can get the first flag user.txt
 <img width="428" height="70" alt="image" src="https://github.com/user-attachments/assets/24f2df07-0619-44a1-8362-d891c0522e44" />
 
 ---
-Lets find the root password !
+Lets find the root flag !
 
 
 ```
