@@ -164,6 +164,7 @@ we wait about 1 minute and we get a shell as **root**
 ```
 cd /root
 cat root.txt
+```
 
 <img width="399" height="204" alt="image" src="https://github.com/user-attachments/assets/4002d3c6-163f-4c8f-89d5-59a948aaf015" />
 
