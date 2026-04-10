@@ -39,5 +39,41 @@ aslo tried to brute force the smb, the same thing ..
 
 actually .. it was the first password on the log1.txt, we just tried the false login 
 
+username : milesdyson 
+so once in the mail squirrell
+
+<img width="730" height="208" alt="image" src="https://github.com/user-attachments/assets/4018c7b2-1bc2-40e3-b783-ecba309e1961" />
+
+
+we have the smb password 
+
+<img width="730" height="208" alt="image" src="https://github.com/user-attachments/assets/9dd10fdb-7839-4d04-a427-2ea32b02c538" />
+
+```
+)s{A&2Z=F^n_E.B`
+```
+
+inside of the smb share with the follwing command:
+```
+smbclient //10.130.172.8/milesdyson -U milesdyson    
+```
+
+<img width="714" height="415" alt="image" src="https://github.com/user-attachments/assets/d5ba64c3-86a8-466a-afdd-5ab3e4ad963a" />
+
+inside the notes share we see this :
+
+<img width="714" height="677" alt="image" src="https://github.com/user-attachments/assets/fe2bb4b0-0710-4242-8150-b93325a2a155" />
+
+and we have this file ''important.txt""
+
+<img width="714" height="175" alt="image" src="https://github.com/user-attachments/assets/7b842660-cd78-462d-a838-d4570bf29f72" />
+
+idk if it's really important ..
+
+
+
+
+
+
 
  
