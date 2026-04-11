@@ -20,3 +20,19 @@ user found :
 ```
 Jessie
 ```
+
+we explore a bit the sitemap website  
+-> image
+
+
+while we launched a gobuster on http://ctf.thm/sitemap/
+
+<img width="739" height="398" alt="image" src="https://github.com/user-attachments/assets/a34772a5-0d70-4c3d-86c5-997764265954" />
+
+we find a .ssh repo
+
+<img width="1378" height="321" alt="image" src="https://github.com/user-attachments/assets/34d19f98-cee9-43cc-8e29-4da7c93f6a97" />
+
+bingo ! we got the ssh to enter the server 
+
+<img width="739" height="398" alt="image" src="https://github.com/user-attachments/assets/e345616a-d00d-4698-ac18-95f2afe2fcd4" />
