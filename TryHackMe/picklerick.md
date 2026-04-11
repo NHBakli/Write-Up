@@ -35,3 +35,8 @@ and assets :
 
 <img width="1358" height="519" alt="image" src="https://github.com/user-attachments/assets/2052dd7a-53f7-43b7-b426-3ffc3e709bcd" />
 
+
+we can only connect using a ssh key 
+
+<img width="689" height="368" alt="image" src="https://github.com/user-attachments/assets/5f7437c5-ab5d-4152-a141-c7e74922ba8e" />
+
