@@ -20,3 +20,18 @@ we find a username :
 ```
 R1ckRul3s
 ```
+
+lets explore the different finding in gobuster :
+
+first robots.txt
+
+<img width="1358" height="478" alt="image" src="https://github.com/user-attachments/assets/0d8e3fb3-22f8-4c77-8cfc-6ffcc1325459" />
+
+```
+Wubbalubbadubdub
+```
+
+and assets :
+
+<img width="1358" height="519" alt="image" src="https://github.com/user-attachments/assets/2052dd7a-53f7-43b7-b426-3ffc3e709bcd" />
+
