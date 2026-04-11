@@ -53,6 +53,9 @@ the user flag is in /Documents :
 
 <img width="746" height="161" alt="image" src="https://github.com/user-attachments/assets/3a789449-4899-4df0-a160-020442710b43" />
 
+---
+to the root 
+
 we do a 
 ```
 sudo -l
